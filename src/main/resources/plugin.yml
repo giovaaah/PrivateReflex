@@ -1,0 +1,36 @@
+name: PrivateReflex
+version: '${project.version}'
+main: github.com.giovaaah.refreshMSG.RefreshMSG
+authors: [ Presidente, Natrium ]
+description: Plugin for private messages in minecraft chat
+
+commands:
+
+  msg:
+    description: command to send private message to other players
+    aliases: ["mp", "pm", "message", "private"]
+    usage: </command>
+    permission: private-reflex.msg
+
+
+reply:
+  description: command to reply the last private message that you received
+    usage: </command>
+    aliases: ["rep", "rp" "am"]
+    permission: private-reflex.reply
+
+    permissions:
+      private-message.*:
+        deafult: op
+        children:
+          private-reflex.msg: true
+          private-reflex.reply: true
+            private-reflex.msg:
+              default: true
+              private-reflex.reply:
+                default: true
+
+
+
+
+
